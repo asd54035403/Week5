@@ -1,0 +1,77 @@
+@mixin pad {
+    @media(max-width: 768px){
+        @content
+    }
+}
+.checkout{
+    max-width: 940px;
+    height: 460px;
+    margin-bottom: 60px;
+    background: url(https://bit.ly/2P7GhNd) ;
+    background-size:cover ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include pad(){
+        background-position: 50% 50%;
+        margin-bottom: 0;
+    }
+}
+.checkmark{
+    margin-bottom: 30px;
+    display: flex;
+    p{
+        color:$white;
+        background: $darkGreen;
+        width: 20px;
+        height: 18px;
+        padding-top: 2px;
+        text-align: center;
+        border-radius: 999em;
+    }
+    .marklink {
+        color: $darkGreen;
+    }
+}
+.sucess{
+    margin-bottom: 50px;
+    h2{
+        color:$darkGreen;
+        font-size:$font-size-xl;
+        font-weight: bold;
+    }
+}
+.keepShopping{
+    width: 300px;
+    height: 65px;
+    padding-top: 20px;
+    background: $yellow;
+    color: $darkGreen;  
+    font-size: $font-size-l;           
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    @include pad(){
+        display: none;
+    }
+    
+}
+.keepShopping-RWD{
+    height: 65px;
+    padding-top: 20px;
+    background: $yellow;
+    color: $darkGreen;  
+    font-size: $font-size-l;           
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    @include pad(){
+        display: block;
+        width: 100%;
+
+    }
+}
