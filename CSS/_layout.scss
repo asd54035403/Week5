@@ -5,15 +5,23 @@ img{
     max-width: 100%;
     height: auto;
   }
-  *,*::before,*::after{
+a {
+    text-decoration: none;
+ }
+*,*::before,*::after{
 
     box-sizing:border-box;
     
-    }
+}
 @mixin pad {
     @media(max-width: 768px){
         @content
     }
+}
+@mixin text-hide{
+    text-indent:101%;
+    overflow:hidden;
+    white-space:nowrap;
 }
 .container{
     max-width: 940px;
@@ -27,68 +35,88 @@ img{
 .header{
     margin-bottom: 10px;
 }
-.hamLogo,.mobLogo{
-    display: none;
-}
-
-.nav{
-    display: flex;
-   justify-content: space-between;
-   margin:10px 10px;
-}
-
-.banner{
-    margin-left:auto;
-    margin-right:auto;
-}
-.index{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a{
-        font-size:$font-size-s;
-        color:$darkGreen;
-        font-weight: bolder;
-        padding: 5px 30px;
-        border-radius: 5px;
-        text-decoration: none;
-    }
-    a:hover{
-        background-color: $limeGreen;
-    }
-}
-/* ----------------------------header-RWD---------------------------- */
-@include pad(){
-    .hide{
-        display: none;
-    }
-    .header{
-        margin-bottom: 0;
-    }
-    .nav{
+.navbar {
+        display: flex;
         justify-content: space-between;
+        padding: 34px 0;
+        position: relative;
     }
-    .logo{
-        display: none;
-    }
-    .index{
-        width: auto;
-        a{
-            padding:0px;
-        }
-        img{
-            padding: 0;
-        }
+    .logo-link{
+        background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg) no-repeat;
+        width:250px; 
+        height:50px;
+        @include text-hide();
     }
     
-    .hamLogo{
-        display: block;
+  
+  .navbar-toggler {
+        display: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        @include pad(){
+            display: block;
+            .navbar-toggler:focus {
+                outline: 0;
+            }
+        }
     }
-    .mobLogo{
+  
+  .navbar-nav {
+        display: flex;
+        align-items: center;
+        max-height: 0px;
+        @include pad(){
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            transition: all 0.8s;
+            overflow: hidden;
+            background: white;
+            flex-direction: column;
+        }
+    }
+  
+  .navbar .active {
+        max-height: 200px;
+    }
+  
+  .navbar-collapse {
+        display: flex;
+        align-items: center;
+    }
+  
+  .nav-link {
+        color: #3F5D45;
+        font-weight: bold;
+        padding: 0 30px;
         display: block;
-        width: 40%;
-    }   
-}
+        @include pad(){
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+  .navbar-link {
+        padding-left: 30px;
+    }
+  @include pad(){
+    .nav-item {
+            width: 100%;
+        }
+    
+      .nav-item:hover {
+            background-color: #EAF0ED;
+        }
+    
+      .navbar-link {
+            padding-left: 0;
+        }
+    }
+  
+  
+
+
 
 /* ----------------------------subscribe----------------------------- */
 .subscribe{

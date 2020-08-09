@@ -62,6 +62,10 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -84,81 +88,109 @@ img {
   margin-bottom: 10px;
 }
 
-.hamLogo, .mobLogo {
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 34px 0;
+  position: relative;
+}
+
+.logo-link {
+  background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/logo-all-dark.svg) no-repeat;
+  width: 250px;
+  height: 50px;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar-toggler {
   display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-.nav {
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+  .navbar-toggler .navbar-toggler:focus {
+    outline: 0;
+  }
+}
+
+.navbar-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 10px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-height: 0px;
 }
 
-.banner {
-  margin-left: auto;
-  margin-right: auto;
+@media (max-width: 768px) {
+  .navbar-nav {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    overflow: hidden;
+    background: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-.index {
+.navbar .active {
+  max-height: 200px;
+}
+
+.navbar-collapse {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.index a {
-  font-size: 16px;
+.nav-link {
   color: #3F5D45;
-  font-weight: bolder;
-  padding: 5px 30px;
-  border-radius: 5px;
-  text-decoration: none;
+  font-weight: bold;
+  padding: 0 30px;
+  display: block;
 }
 
-.index a:hover {
-  background-color: #EAF0ED;
-}
-
-/* ----------------------------header-RWD---------------------------- */
 @media (max-width: 768px) {
-  .hide {
-    display: none;
+  .nav-link {
+    padding: 10px 0;
+    text-align: center;
   }
-  .header {
-    margin-bottom: 0;
+}
+
+.navbar-link {
+  padding-left: 30px;
+}
+
+@media (max-width: 768px) {
+  .nav-item {
+    width: 100%;
   }
-  .nav {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  .nav-item:hover {
+    background-color: #EAF0ED;
   }
-  .logo {
-    display: none;
-  }
-  .index {
-    width: auto;
-  }
-  .index a {
-    padding: 0px;
-  }
-  .index img {
-    padding: 0;
-  }
-  .hamLogo {
-    display: block;
-  }
-  .mobLogo {
-    display: block;
-    width: 40%;
+  .navbar-link {
+    padding-left: 0;
   }
 }
 
@@ -375,7 +407,6 @@ form {
   display: block;
   padding-top: 16px;
   padding-bottom: 16px;
-  text-decoration: none;
 }
 
 .menu li a:hover {
@@ -464,7 +495,6 @@ form {
   padding-bottom: 16px;
   font-weight: bold;
   color: #3F5D45;
-  text-decoration: none;
 }
 
 /* ----------------------------Content-RWD----------------------------- */
@@ -496,6 +526,9 @@ form {
   }
   .productList ul li {
     width: 80%;
+  }
+  .hide {
+    display: none;
   }
 }
 
@@ -542,7 +575,6 @@ form {
   padding-bottom: 16px;
   padding-right: 26px;
   color: #3F5D45;
-  text-decoration: none;
 }
 
 .pageNum a:hover {
@@ -628,7 +660,6 @@ form {
   border: none;
   font-weight: bold;
   text-align: center;
-  text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -646,7 +677,6 @@ form {
   border: none;
   font-weight: bold;
   text-align: center;
-  text-decoration: none;
   display: none;
 }
 

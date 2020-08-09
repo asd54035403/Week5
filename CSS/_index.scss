@@ -34,7 +34,6 @@
             display: block;
             padding-top: 16px;
             padding-bottom: 16px;
-            text-decoration: none;
         }
         a:hover{
             background-color:$limeGreen;
@@ -107,7 +106,7 @@
         padding-bottom: 16px;
         font-weight: bold;
         color:$darkGreen;
-        text-decoration: none;
+        
     }
 }
 
@@ -130,6 +129,9 @@
                 width: 80%;
             }
         }
+    }
+    .hide{
+        display: none;
     }
 }
 /* ----------------------------Page----------------------------- */
@@ -161,7 +163,7 @@
         padding-bottom: 16px;
         padding-right:26px;
         color: #3F5D45;
-        text-decoration: none;
+        
     }
     a:hover{
         color: white;

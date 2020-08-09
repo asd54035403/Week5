@@ -52,7 +52,7 @@
     border: none;
     font-weight: bold;
     text-align: center;
-    text-decoration: none;
+    
     @include pad(){
         display: none;
     }
@@ -67,7 +67,7 @@
     border: none;
     font-weight: bold;
     text-align: center;
-    text-decoration: none;
+    
     display: none;
     @include pad(){
         display: block;
